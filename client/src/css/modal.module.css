@@ -1,0 +1,168 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.383);
+  backdrop-filter: blur(10px);
+  display: grid;
+  place-items: center;
+  z-index: 100;
+}
+
+.modalCenter {
+  width: var(--fixed_width);
+  max-width: 50rem;
+  background: #fff;
+  padding: 1.5rem 2rem;
+}
+
+.modalHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalHeader button {
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+  color: var(--main_grey);
+}
+
+.modalHeader button:hover {
+  color: var(--main_dark);
+}
+
+.modalHeader button svg {
+  margin-right: 0.5rem;
+  color: var(--main_grey);
+}
+
+.modalContent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.modalImgContainer {
+  height: 20rem;
+  width: 20rem;
+}
+
+.modalImgContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.productInfo li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #bfbfbf;
+  padding: 0.5rem 0;
+}
+
+.productInfo_title {
+  font-size: 1.58rem;
+}
+
+.productInfo_title:first-child {
+  margin-right: 1.5rem;
+}
+
+.productInfo_value {
+  font-size: 1.5rem;
+}
+
+.productInfo_value svg {
+  color: var(--main_color);
+}
+
+.modalFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalFooter_left {
+  display: flex;
+  align-items: center;
+}
+
+.iconContainer {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 10rem;
+  display: grid;
+  place-items: center;
+  margin-right: 0.8rem;
+  background: var(--main_dark);
+}
+
+.iconContainer > svg {
+  font-size: 1.5rem;
+  color: var(--main_color);
+  color: var(--main_white);
+}
+
+.modalFooter_left p {
+  font-weight: bolder;
+  font-size: 1.36rem;
+}
+
+.modalFooter button {
+  padding: 0.56rem 1rem;
+  background: var(--main_dark);
+  color: var(--main_white);
+  cursor: pointer;
+  font-size: 1.56rem;
+  letter-spacing: 0.2px;
+  border-radius: 1rem;
+  transition: var(--transition);
+}
+
+.modalFooter button:hover {
+  background: var(--main_grey);
+}
+
+@media screen and (max-width: 720px) {
+  .modalImgContainer {
+    height: 15rem;
+    width: 15rem;
+  }
+
+  .productInfo_title {
+    font-size: 1.45rem;
+  }
+
+  .productInfo_value {
+    font-size: 1.45rem;
+  }
+
+  .iconContainer {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .iconContainer > svg {
+    font-size: 1.25rem;
+  }
+
+  .modalFooter_left p {
+    font-size: 1.25rem;
+  }
+
+  .modalFooter button {
+    padding: 0.4rem 0.8rem;
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,110 @@
+#globalFooter {
+  background: var(--main_dark);
+}
+
+.row {
+  padding: 5rem 0 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.row > div {
+  color: var(--main_white);
+  /* flex: 1; */
+}
+
+.row > div h3 {
+  font-size: 2.85rem;
+  margin-bottom: 2rem;
+}
+
+.col_1 li {
+  display: flex;
+  align-items: center;
+}
+
+.col_1 li:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.iconContainer {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+.iconContainer > svg {
+  width: 100%;
+  height: 100%;
+  color: var(--main_color);
+}
+
+.col_1 p {
+  font-size: 1.35rem;
+  /* font-weight: bold; */
+}
+
+.navList {
+  font-size: 1.48rem;
+}
+
+.navList:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.navLink {
+  color: var(--main_white);
+  transition: var(--transition);
+}
+
+.navLink:hover {
+  color: var(--main_color);
+}
+
+#logoutBtn {
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#logoutBtn:hover {
+  color: var(--main_color);
+}
+
+.iconsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.iconsContainer svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.iconsContainer svg:hover {
+  color: var(--main_color);
+}
+
+.iconsContainer svg:not(:last-child) {
+  margin-right: 0.8rem;
+}
+
+@media screen and (max-width: 720px) {
+  .row > div h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .iconContainer {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .iconsContainer svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}

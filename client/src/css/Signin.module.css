@@ -1,0 +1,183 @@
+.signinPage {
+  height: 100vh;
+  padding: 10rem 0 20rem;
+}
+
+.signContainer {
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+.parent {
+  height: auto;
+  position: relative;
+  width: 100%;
+}
+
+.parent > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  border: 1px solid var(--main_white);
+  margin-bottom: 3rem;
+  background: #fafafa;
+  transition: all 0.5s linear;
+}
+
+.signupContainer {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+.parent > div h2 {
+  text-align: center;
+  font-size: 2.75rem;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+}
+
+.form_group {
+  margin-bottom: 1.5rem;
+}
+
+.form_group > input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 0.45rem;
+  padding: 0.6rem;
+  font-size: 1.65rem;
+  background: transparent;
+}
+
+.form_group > label {
+  display: block;
+  font-size: 1.65rem;
+  padding: 0.5rem 0 0 0.6rem;
+  transition: all 0.4s linear;
+}
+
+.form_group > input:placeholder-shown + label {
+  margin-top: -3.2rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.googleBtn {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 0;
+  text-align: center;
+  background: #ef3f49;
+  transition: var(--transition);
+}
+
+.googleBtn > button {
+  background: transparent;
+  font-size: 1.7rem;
+  color: var(--main_white);
+  font-weight: bold;
+}
+
+.googleBtn:hover {
+  background: #c0242c;
+}
+
+.divider {
+  margin-bottom: 1.6rem;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bolder;
+}
+
+.divider::after,
+.divider::before {
+  content: '';
+  display: inline-block;
+  width: 6rem;
+  height: 1px;
+  background: var(--main_grey);
+}
+
+.divider::after {
+  margin-left: 1rem;
+}
+
+.divider::before {
+  margin-right: 1rem;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  background: var(--main_grey);
+  font-size: 1.56rem;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.78rem 0;
+  color: var(--main_white);
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--main_dark);
+}
+
+.form_footer {
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 1.45rem;
+}
+
+.signBtn {
+  color: purple;
+  cursor: pointer;
+}
+
+.alertContainer {
+  margin: 1.78rem 0;
+  text-align: center;
+}
+
+.alertContainer p {
+  font-size: 1.56rem;
+  color: red;
+}
+
+@media screen and (max-width: 720px) {
+  .parent > div h2 {
+    font-size: 2.25rem;
+  }
+
+  .form_group {
+    margin-bottom: 1.5rem;
+  }
+  .form_group > label {
+    font-size: 1.45rem;
+  }
+
+  .googleBtn {
+    padding: 0.6rem 0;
+  }
+
+  .googleBtn > button {
+    font-size: 1.57rem;
+  }
+
+  .btn {
+    font-size: 1.5rem;
+  }
+
+  .alertContainer {
+    margin: 1.5rem 0;
+  }
+
+  .alertContainer p {
+    font-size: 1.4rem;
+  }
+}

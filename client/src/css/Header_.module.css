@@ -1,0 +1,88 @@
+#mainHeader {
+  height: 70vh;
+  background: url('../components/bgimages/BG3.jpg') center/cover, no-repeat;
+}
+
+.headerContent {
+  font-family: var(--secondary_font);
+  color: var(--main_white);
+  text-align: center;
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.iconContainer > svg {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.iconContainer > svg:hover {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 10rem;
+  background: var(--main_color);
+  color: var(--main_white);
+}
+
+.iconContainer > svg:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.headerContent h1 > span {
+  display: block;
+}
+
+.mainText {
+  font-size: 5rem;
+}
+
+.subText {
+  font-size: 1.6rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.5rem 2rem;
+  font-size: 2rem;
+  background: var(--main_dark);
+  margin-top: 3rem;
+  border-radius: 1rem;
+  color: var(--main_white);
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--main_grey);
+}
+
+/* 
+====================
+MEDIA QUERIES
+====================
+*/
+
+@media screen and (max-width: 720px) {
+  #mainHeader {
+    height: 60vh;
+  }
+
+  .headerContent {
+    top: 50%;
+  }
+
+  .mainText {
+    font-size: 3rem;
+  }
+
+  .subText {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 1rem 1.6rem;
+    font-size: 1.5rem;
+    background: #000;
+  }
+}

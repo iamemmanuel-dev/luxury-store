@@ -1,0 +1,148 @@
+.navbar {
+  padding: 1.7rem 10rem;
+  border-bottom: 1px solid var(--main_grey);
+  color: var(--main_white);
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #1e1f23e5, #3d4144b7, #1e1f23e0);
+  z-index: 4;
+}
+
+.logoContainer {
+  width: 5rem;
+  height: 5rem;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navIcon {
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--main_white);
+}
+
+.navLinksContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111214d7;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  transition: var(--transition);
+}
+
+.navUL {
+  text-align: center;
+}
+
+.navList {
+  font-size: 2rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.navList:not(:last-child) {
+  margin-bottom: 5rem;
+}
+
+.navLink {
+  color: var(--main_white);
+  transition: var(--transition);
+}
+
+.navLink:hover {
+  color: var(--main_color);
+}
+
+#logoutBtn {
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#logoutBtn:hover {
+  color: var(--main_color);
+}
+
+.navCloseBtn {
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+  font-size: 4rem;
+  background: transparent;
+  cursor: pointer;
+  color: var(--main_white);
+}
+
+.navHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navIconsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.cartIconContainer {
+  margin-left: 1rem;
+  position: relative;
+}
+
+.navAmt {
+  position: absolute;
+  top: -12px;
+  right: -8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 10rem;
+  display: grid;
+  place-items: center;
+  background: var(--main_color);
+  color: var(--main_white);
+  font-weight: bolder;
+  font-size: 1.26rem;
+}
+
+.profileContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.profileContainer svg {
+  color: var(--main_dark);
+  cursor: none;
+}
+
+.profileContainer p {
+  font-size: 1.4rem;
+  font-weight: bolder;
+  padding-left: 0.7rem;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 720px) {
+  .navbar {
+    padding: 1.7rem 3rem;
+  }
+  .navList {
+    font-size: 1.6rem;
+  }
+
+  .navCloseBtn {
+    font-size: 3rem;
+  }
+
+  .navList:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+}

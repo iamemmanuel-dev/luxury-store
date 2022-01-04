@@ -1,0 +1,51 @@
+.deliverySection {
+  background: var(--main_dark);
+  padding: 1.5rem 0;
+}
+
+.deliveryCenter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.deliveryBox {
+  color: var(--main_white);
+  display: flex;
+  align-items: center;
+}
+
+.deliveryBox h3 {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.deliveryIconContainer {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 10rem;
+  font-size: 2rem;
+  display: grid;
+  place-items: center;
+  color: var(--main_grey);
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 720px) {
+  .deliveryCenter {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1rem;
+  }
+  .deliveryIconContainer {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.6rem;
+  }
+
+  .deliveryBox h3 {
+    font-size: 1.4rem;
+  }
+}

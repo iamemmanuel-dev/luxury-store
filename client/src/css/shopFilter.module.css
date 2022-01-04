@@ -1,0 +1,107 @@
+.content {
+  padding: 0 1.5rem;
+}
+
+.content h2,
+.categoryContainer h3 {
+  font-size: 2.35rem;
+}
+
+.breadCrumb {
+  font-size: 1.6rem;
+}
+
+.categoryContainer {
+  margin-top: 4rem;
+}
+
+.filterBtnsContainer {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.form_group {
+  display: flex;
+  align-items: center;
+}
+
+.form_group input {
+  display: inline-block;
+  margin-right: 0.6rem;
+  accent-color: var(--main_dark);
+  /* accent-color: var(--main_color); */
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.form_group label {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.DOD {
+  margin-top: 4rem;
+}
+
+.DOD_content {
+  margin-top: 3rem;
+}
+
+.DOD_imgContainer {
+  width: 7rem;
+  height: 7rem;
+  position: relative;
+}
+
+.DOD_imgContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.DOD_tag {
+  position: absolute;
+  top: -1rem;
+  /* top: -2rem; */
+  right: -1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 10rem;
+  background: #ef3f49;
+  color: var(--main_white);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  line-height: 1;
+  font-weight: bolder;
+}
+
+.DOD_list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  /* justify-content: space-between; */
+}
+
+.DOD_title {
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+
+.DOD_price {
+  font-size: 1.4rem;
+}
+
+.DOD_price_stale {
+  text-decoration: line-through;
+  color: #bfbfbf;
+  margin-right: 0.3rem;
+}
+
+.DOD_price_now {
+  color: var(--main_color);
+  font-size: 1.6rem;
+  font-weight: bolder;
+}

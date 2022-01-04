@@ -1,0 +1,60 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead,
+.table tbody {
+  text-align: center;
+}
+
+.table thead {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.table tbody td {
+  font-size: 1.6rem;
+}
+
+.table tbody a {
+  color: purple;
+}
+
+.table tbody tr:nth-child(odd) {
+  background: rgba(204, 204, 204, 0.127);
+}
+
+.table tbody td:first-child {
+  font-weight: bold;
+}
+
+.imgContainer {
+  width: 5rem;
+  height: 5rem;
+}
+
+.imgContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 720px) {
+  .table thead {
+    font-size: 1.46rem;
+  }
+
+  .table tbody td {
+    font-size: 1.35rem;
+    padding: 1rem 0;
+  }
+
+  .table thead th:nth-child(2) {
+    display: none;
+  }
+
+  .table tbody td:nth-child(2) {
+    display: none;
+  }
+}

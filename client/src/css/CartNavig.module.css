@@ -1,0 +1,35 @@
+.navigBox {
+  width: var(--fixed_width);
+  max-width: 50rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  margin-bottom: 5rem;
+}
+
+.navigBox > * {
+  display: inline-block;
+  flex: 1;
+  height: 100%;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--main_grey);
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.78rem 0;
+}
+
+.navigBox > a:nth-child(1) {
+  border-top: 2px solid var(--main_grey);
+  border-bottom: 2px solid var(--main_grey);
+  height: 100%;
+}
+
+@media screen and (max-width: 720px) {
+  .navigBox > * {
+    font-size: 1.24rem;
+  }
+}

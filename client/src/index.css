@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400&display=swap');
+
+:root {
+  --primary_font: 'Nunito Sans', sans-serif;
+  --secondary_font: 'Quicksand', sans-serif;
+
+  --main_dark: #1e1f23;
+  --main_grey: #555a5f;
+  --light_grey: #f1f1f155;
+  --main_white: #eee;
+  --main_color: #ef3f49;
+  --main_color: rgb(184, 134, 11);
+
+  /* --main_color: rgb(143, 122, 4); */
+  /* --main_color: rgb(184, 134, 11); */
+  /* --main_color: #a8965e; */
+  /* --main_color: #e0ac10; */
+  /* --main_color: #d3a10b; */
+  --main_color-dark: rgb(184, 134, 11);
+
+  --transition: all 0.3s linear;
+
+  --fixed_width: 90vw;
+  --max_width: 100rem;
+}
+
+::selection {
+  background: var(--main_color);
+  color: var(--main_white);
+}
+
+body {
+  font-family: var(--primary_font);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: var(--primary_font);
+  font-family: 'Quicksand', sans-serif !important;
+  border: none;
+  outline: none;
+}
+
+.style_this {
+  color: var(--main_color);
+}
+
+/*
+  PROJECT HELPERS
+*/
+
+section {
+  padding: 7rem 0;
+}
+
+.container {
+  width: var(--fixed_width);
+  max-width: var(--max_width);
+  margin: 0 auto;
+}
+
+.titleContainer {
+  margin-bottom: 3rem;
+}
+
+.titleContainer h2 {
+  font-size: 4rem;
+  /* text-align: center; */
+}
+
+.banner_container {
+  height: 35rem;
+  background: url('./components/bgimages/salesBanner7.jpg') center/cover,
+    no-repeat;
+  margin: 4rem 0;
+}
+
+.container_sign {
+  width: 80vw;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+/*
+==============
+add the class below on click to signup to the signincon
+==============
+*/
+.hideSignin {
+  transform: rotateY(-180deg) !important;
+  backface-visibility: hidden !important;
+}
+
+/*add to siginup*/
+.showSignup {
+  transform: rotateY(0) !important;
+}
+
+/*
+==============
+add the class below on click to signin to the signincon
+==============
+*/
+
+.hideSignup {
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+}
+
+/*add to signin*/
+
+.showSignin {
+  transform: rotateY(0);
+}
+
+.togglePanel {
+  left: -100% !important;
+}
+
+.active_ {
+  background: #fff !important;
+  color: var(--main_dark) !important;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+/*
+ERROR
+*/
+
+.errorContent {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.errorContent span {
+  display: block;
+}
+
+.err_code {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #ef3f49;
+}
+
+.spinnerContainer {
+  position: relative;
+  top: 70%;
+  left: 50%;
+  width: 14rem;
+  height: 14rem;
+  transform: translateX(-50%);
+}
+
+.spinnerContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.errorAlert {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 720px) {
+  section {
+    padding: 7rem 0 3rem;
+  }
+
+  .titleContainer h2 {
+    font-size: 2.75rem;
+  }
+
+  .spinnerContainer {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .errorAlert {
+    font-size: 1.8rem;
+  }
+}
