@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
+import StripeCheckout from 'react-stripe-checkout'
 import { Link, withRouter } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import CartNavig from '../components/CartNavig'
@@ -44,21 +45,21 @@ const Cart = props => {
 
   const validateProceedToCheckout = e => {
     e.preventDefault()
-    if (shippingCost === 'free') {
-      const isNotLiable = cart.some(
-        el => el.niche === 'macbooks' || el.niche === 'rolex' || cart.length > 3
-      )
-      if (isNotLiable) {
-        return setError(true)
-      }
-      return dispatch(
-        proceedToCheckout(cart, { user, shipCost, cartTotal })
-      ).then(() => props.history.replace(`/checkout`))
-    }
+    // if (shippingCost === 'free') {
+    //   const isNotLiable = cart.some(
+    //     el => el.niche === 'macbooks' || el.niche === 'rolex' || cart.length > 3
+    //   )
+    //   if (isNotLiable) {
+    //     return setError(true)
+    //   }
+    //   return dispatch(
+    //     proceedToCheckout(cart, { user, shipCost, cartTotal })
+    //   ).then(() => props.history.replace(`/checkout`))
+    // }
 
-    dispatch(proceedToCheckout(cart, { user, shipCost, cartTotal })).then(() =>
-      props.history.replace(`/checkout`)
-    )
+    // dispatch(proceedToCheckout(cart, { user, shipCost, cartTotal })).then(() =>
+    //   props.history.replace(`/checkout`)
+    // )
   }
 
   const handleCouponVerification = e => {
@@ -126,7 +127,7 @@ const Cart = props => {
                   </table>
 
                   <div className={C.row}>
-                    <div className={C.col_1}>
+                    {/* <div className={C.col_1}>
                       <form onSubmit={handleCouponVerification}>
                         <h3>Apply Coupon</h3>
                         <small>
@@ -148,7 +149,7 @@ const Cart = props => {
                       <small className={C.verificationStatus}>
                         Verifying: verified
                       </small>
-                    </div>
+                    </div> */}
                     <div className={C.col_2}>
                       <header>
                         <h3>Cart Summary</h3>
@@ -158,9 +159,9 @@ const Cart = props => {
                         <h4>{formatPrice(cartSubTotal)}</h4>
                       </div>
                       <div className={C.shippingDetail}>
-                        <h4>Shipping</h4>
+                        <h4>Shipping: free</h4>
                         <form onSubmit={validateProceedToCheckout}>
-                          <div className={C.form_group}>
+                          {/* <div className={C.form_group}>
                             <input
                               type='radio'
                               name='shippingCost'
@@ -196,7 +197,7 @@ const Cart = props => {
                               and rolex and more than 3 products. Please select
                               "flat rate" to continue.
                             </p>
-                          </div>
+                          </div> */}
 
                           <div className={C.taxBox}>
                             <h4>Tax</h4>
@@ -207,9 +208,23 @@ const Cart = props => {
                             <h4>Total</h4>
                             <h4>{formatPrice(cartTotal)}</h4>
                           </div>
-                          <button type='submit' className={C.btn}>
-                            proceed to checkout
-                          </button>
+                          <StripeCheckout
+                            amount={cartTotal * 100}
+                            token={() =>
+                              alert(
+                                'Thank you, your order has been received. please do not perform this action again'
+                              )
+                            }
+                            stripeKey={process.env.REACT_APP_STRIPE_PUB_KEY}
+                            name='Luxury Buy'
+                            description={`pay a total of ${formatPrice(
+                              cartTotal
+                            )} in total for your luxury products`}
+                          >
+                            <button type='submit' className={C.btn}>
+                              proceed to checkout
+                            </button>
+                          </StripeCheckout>
                         </form>
                       </div>
                     </div>
