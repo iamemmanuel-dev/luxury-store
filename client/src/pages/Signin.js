@@ -10,7 +10,7 @@ const Signin = props => {
   const usernameInput = useRef()
 
   const {
-    credentials: { username, password, confirmedPassword },
+    credentials: { username, password, confirmedPassword, isLoading },
     User: { isAuthenticated, errorMsg },
   } = useSelector(state => state.auth)
   const dispatch = useDispatch()
@@ -43,10 +43,6 @@ const Signin = props => {
   }, [])
 
   useEffect(() => {
-    // if (isAuthenticated) {
-    //   props.history.replace(`/`)
-    //   window.location.reload(true)
-    // }
     isAuthenticated && props.history.replace('/')
   }, [isAuthenticated])
 
@@ -89,7 +85,18 @@ const Signin = props => {
                   <p>{errorMsg}</p>
                 </div>
 
-                <button className={S.btn}>Log in</button>
+                <button className={S.btn}>
+                  {isLoading ? (
+                    <img
+                      src='/images/loading.jpg'
+                      width='10px'
+                      height='10px'
+                      alt=''
+                    />
+                  ) : (
+                    'Log in'
+                  )}
+                </button>
               </form>
               <div className={S.divider}>OR</div>
               <a href='/auth/google' className={S.googleBtn}>
@@ -152,7 +159,18 @@ const Signin = props => {
                   <p>{errorMsg}</p>
                 </div>
 
-                <button className={S.btn}>Sign up</button>
+                <button className={S.btn}>
+                  {isLoading ? (
+                    <img
+                      src='/images/loading.jpg'
+                      width='10px'
+                      height='10px'
+                      alt=''
+                    />
+                  ) : (
+                    'Log in'
+                  )}
+                </button>
               </form>
               <div className={S.divider}>OR</div>
               <a href='/auth/google' className={S.googleBtn}>

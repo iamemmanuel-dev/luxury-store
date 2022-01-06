@@ -3,6 +3,7 @@ import { printOptions } from '../axiosHelper'
 
 const authState = {
   credentials: {
+    isLoading: false,
     username: '',
     password: '',
     confirmedPassword: '',
@@ -16,6 +17,7 @@ const authState = {
 }
 
 export const Signup_User = data => async dispatch => {
+  dispatch({ type: 'SET_LOADING_FLAG' })
   try {
     const res = await axios(printOptions(`POST`, `/api/signup`, data))
     const { status, message, user } = res.data
@@ -65,6 +67,12 @@ const authReducer = (state = authState, { type, payload, data }) => {
         credentials: { ...state.credentials, ...payload },
       }
 
+    case 'SET_LOADING_FLAG':
+      return {
+        ...state,
+        credentials: { ...state.credentials, isLoading: true },
+      }
+
     case 'AUTH_FAIL':
       return {
         ...state,
@@ -77,6 +85,11 @@ const authReducer = (state = authState, { type, payload, data }) => {
               ? `Passwords do not match, please check credentials and make sure they match.`
               : '',
         },
+
+        credentials: {
+          ...state.credentials,
+          isLoading: false,
+        },
       }
 
     case 'AUTH_SUCCESS':
@@ -88,6 +101,10 @@ const authReducer = (state = authState, { type, payload, data }) => {
           isAuthenticated: true,
           user: payload,
         },
+        credentials: {
+          ...state.credentials,
+          isLoading: false,
+        },
       }
 
     case 'SIGNIN_AUTH_FAIL':
@@ -96,6 +113,10 @@ const authReducer = (state = authState, { type, payload, data }) => {
         User: {
           ...state.User,
           errorMsg: payload,
+        },
+        credentials: {
+          ...state.credentials,
+          isLoading: false,
         },
       }
 
@@ -107,6 +128,10 @@ const authReducer = (state = authState, { type, payload, data }) => {
           user: payload,
           isAuthenticated: true,
         },
+        credentials: {
+          ...state.credentials,
+          isLoading: false,
+        },
       }
 
     case 'SET_USER_AUTH_FALSE':
@@ -116,6 +141,10 @@ const authReducer = (state = authState, { type, payload, data }) => {
           ...state.User,
           user: null,
           isAuthenticated: false,
+        },
+        credentials: {
+          ...state.credentials,
+          isLoading: false,
         },
       }
 

@@ -27,3 +27,20 @@ exports.deleteCartItem = async (req, res) => {
   await User.save()
   res.status(200).json({ payload: User.cart })
 }
+
+exports.updateUsersCart = async (req, res) => {
+  let { cart: newCart, userID, shipCost, cartTotal } = req.query
+  const User = await UsersModel.findById(userID)
+  const { _id, username, role } = User
+  if (isNaN(shipCost)) shipCost = 0
+  const data = {
+    _id,
+    username,
+    role,
+    cart: JSON.parse(newCart),
+    shippingCost: shipCost,
+    cartTotal: cartTotal,
+  }
+  const user = await UsersModel.findByIdAndUpdate(userID, data)
+  res.status(200).json({ status: `success`, cart: user.cart, payLoad: user })
+}

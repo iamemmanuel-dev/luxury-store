@@ -16,6 +16,7 @@ const Shop = () => {
   const {
     isModalOpen,
     fetch_product_state: { isLoading, error, data },
+    sortBy,
   } = useSelector(state => state.products)
 
   const { isLoginModalOpen } = useSelector(state => state.cart)
@@ -28,6 +29,27 @@ const Shop = () => {
       return dispatch({ type: `CLOSE_LOGIN_MODAL` })
     }
   }
+
+  const handleSorting = ({ target: { value } }) => {
+    dispatch({ type: `SET_SORT_VALUE`, payload: value })
+  }
+
+  useEffect(() => {
+    let products = [...data]
+    switch (sortBy) {
+      case 'ascending':
+        products.sort((a, b) => a.title.localeCompare(b.title))
+        return dispatch({ type: `SORT_ASC`, payload: products })
+      case 'descending':
+        products.sort((a, b) => b.title.localeCompare(a.title))
+        return dispatch({ type: `SORT_DES`, payload: products })
+      case 'price':
+        products.sort((a, b) => +a.price - +b.price)
+        return dispatch({ type: `SORT_PRICE`, payload: products })
+      default:
+        return dispatch({ type: `SORT_DEFAULT`, payload: data })
+    }
+  }, [sortBy])
 
   useEffect(() => {
     dispatch(Fetch_Products())
@@ -45,8 +67,8 @@ const Shop = () => {
             </div>
             <div className={S.col_2}>
               <header className={S.col_2_mainHeader}>
-                <select>
-                  <option value='default'>Default sorting</option>
+                <select value={sortBy} onChange={handleSorting} name='sortBy'>
+                  <option value='default'>SORT BY</option>
                   <option value='ascending'>A-Z</option>
                   <option value='descending'>Z-A</option>
                   <option value='price'>sort by price</option>

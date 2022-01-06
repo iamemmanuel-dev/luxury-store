@@ -22,6 +22,14 @@ const UsersSchema = new mongoose.Schema({
   },
 
   cart: Array,
+  cartTotal: {
+    type: Number,
+    default: 0,
+  },
+  shippingCost: {
+    type: Number,
+    default: 0,
+  },
 })
 
 UsersSchema.pre(`save`, async function (next) {

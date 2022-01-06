@@ -10,6 +10,9 @@ const productsState = {
 
   modalID: null,
   isModalOpen: false,
+  sortBy: '',
+  category: 'All',
+  products: [],
 }
 
 export const Fetch_Products = () => async dispatch => {
@@ -55,6 +58,8 @@ const reducer = (state = productsState, { type, payload }) => {
           error: '',
           data: payload,
         },
+
+        products: payload,
       }
 
     case 'FETCH_PRODUCTS_FAILED':
@@ -64,6 +69,77 @@ const reducer = (state = productsState, { type, payload }) => {
           isLoading: false,
           error: 'Something went wrong!',
           data: [],
+        },
+
+        products: [],
+      }
+
+    case 'SET_SORT_VALUE':
+      return {
+        ...state,
+        sortBy: payload,
+      }
+
+    case 'SORT_ASC':
+      return {
+        ...state,
+        fetch_product_state: {
+          ...state.fetch_product_state,
+          data: payload,
+        },
+      }
+
+    case 'SORT_DES':
+      return {
+        ...state,
+        fetch_product_state: {
+          ...state.fetch_product_state,
+          data: payload,
+        },
+      }
+
+    case 'SORT_PRICE':
+      return {
+        ...state,
+        fetch_product_state: {
+          ...state.fetch_product_state,
+          data: payload,
+        },
+      }
+
+    case 'SORT_DEFAULT':
+      return {
+        ...state,
+        fetch_product_state: {
+          ...state.fetch_product_state,
+          data: payload,
+        },
+      }
+
+    case 'SET_CATEGORY':
+      return {
+        ...state,
+        category: payload,
+      }
+
+    case 'SET_FILTER_OPTION':
+      let allProducts = [...state.fetch_product_state.data]
+      if (payload === `All`) {
+        return {
+          ...state,
+          fetch_product_state: {
+            ...state.fetch_product_state,
+            data: state.products,
+          },
+        }
+      }
+      const products = state.products.filter(items => items.niche === payload)
+
+      return {
+        ...state,
+        fetch_product_state: {
+          ...state.fetch_product_state,
+          data: products,
         },
       }
 

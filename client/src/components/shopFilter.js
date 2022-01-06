@@ -1,16 +1,27 @@
 import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import S from '../css/shopFilter.module.css'
 import { formatPrice } from './Helpers/FormatPrice'
 
 const ShopFilter = ({ data }) => {
+  const dispatch = useDispatch()
+  const { category, products } = useSelector(state => state.products)
+
   const categories = [
     `All`,
     ...new Set(
-      data.map(items => (items.niche === '' ? 'iphones' : items.niche))
+      products.map(items => (items.niche === '' ? 'iphones' : items.niche))
     ),
   ]
   const DOD = data.filter(el => el.DOD === 'Yes')
+
+  const handleChange = ({ target: { value } }) =>
+    dispatch({ type: `SET_CATEGORY`, payload: value })
+
+  useEffect(() => {
+    dispatch({ type: `SET_FILTER_OPTION`, payload: category })
+  }, [category])
 
   return (
     <div className={S.content}>
@@ -26,7 +37,14 @@ const ShopFilter = ({ data }) => {
           {categories.length > 2 &&
             categories.map((items, i) => (
               <div className={S.form_group} key={i}>
-                <input type='radio' id={items} name='category' />
+                <input
+                  type='radio'
+                  id={items}
+                  name='category'
+                  value={items}
+                  checked={items === category && true}
+                  onChange={handleChange}
+                />
                 <label htmlFor={items}>{items}</label>
               </div>
             ))}

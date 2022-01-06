@@ -10,12 +10,16 @@ import ProductPageHeader from '../components/ProductPageHeader'
 import S from '../css/ProductPage.module.css'
 import { Fetch_Products } from '../redux/reducers/productsReducer'
 import NewsLetter from '../components/NewsLetter'
+import { handleAddToCart } from '../redux/reducers/cartReducer'
 
 const ProductPage = () => {
   let product
   let relatedProducts
 
   const { id } = useParams()
+  const {
+    User: { isAuthenticated, user },
+  } = useSelector(state => state.auth)
   const {
     fetch_product_state: { isLoading, error, data },
   } = useSelector(state => state.products)
@@ -26,6 +30,16 @@ const ProductPage = () => {
     relatedProducts = data.filter(
       el => el._id !== id && el.niche === product.niche
     )
+  }
+
+  const handleClickToAddToCart = _id => {
+    if (!isAuthenticated) {
+      return dispatch({ type: `OPEN_LOGIN_MODAL` })
+    } else if (isLoading) {
+      return
+    } else {
+      dispatch(handleAddToCart(_id, user._id))
+    }
   }
 
   const getBG = () => {
@@ -92,8 +106,12 @@ const ProductPage = () => {
                     </div>
 
                     <div className={S.col_2_btnContainer}>
-                      <input type='number' name='productCount' min={1} />
-                      <button>Add to cart</button>
+                      {/* <input type='number' name='productCount' min={1} /> */}
+                      <button
+                        onClick={() => handleClickToAddToCart(product._id)}
+                      >
+                        Add to cart
+                      </button>
                     </div>
 
                     <div className={S.col_2_guaranteeBox}>

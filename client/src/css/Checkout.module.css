@@ -1,0 +1,23 @@
+.checkoutContainer {
+  max-width: 40rem;
+  margin: 2rem 0;
+}
+
+.form_group {
+  margin-bottom: 1.5rem;
+}
+
+.form_group label {
+  display: block;
+  font-size: 1.7rem;
+  padding-bottom: 0.6rem;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.form_group input {
+  border: 1px solid var(--main_grey);
+  padding: 0.78rem;
+  font-size: 1.67rem;
+  border-radius: 0.6rem;
+}

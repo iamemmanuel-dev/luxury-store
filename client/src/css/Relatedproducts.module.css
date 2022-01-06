@@ -42,7 +42,6 @@ img {
 
 .col h3 {
   font-size: 2.35rem;
-  /* color: var(--main_grey); */
 }
 
 .col p {
@@ -51,25 +50,31 @@ img {
   font-weight: bold;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 600px) {
   .relatedProducts {
-    padding-top: 5rem;
+    padding-top: 6rem;
   }
 
   .relatedProducts h2 {
-    font-size: 2.35rem;
-  }
-
-  .imgContainer {
-    width: 18rem;
-    height: 20rem;
-  }
-
-  .col h3 {
     font-size: 2rem;
   }
 
+  .row {
+    column-gap: 0;
+    row-gap: 2rem;
+  }
+
+  .imgContainer {
+    width: 17rem;
+    height: 17rem;
+    margin-bottom: 0.4;
+  }
+
+  .col h3 {
+    font-size: 1.8rem;
+  }
+
   .col p {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }

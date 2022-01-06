@@ -61,12 +61,6 @@ const Admin = props => {
   }
 
   useEffect(() => {
-    if (props.location.pathname.startsWith(`/admin`)) {
-      document.querySelector(`body`).style.backgroundColor = '#555a5f'
-    }
-  }, [])
-
-  useEffect(() => {
     switch (active) {
       case 'dashboard':
         setIsDashboardActive(true)

@@ -1,12 +1,9 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import 'react-slideshow-image/dist/styles.css'
 import { Link } from 'react-router-dom'
 import HeaderStyles from '../css/Header.module.css'
-import Nav from './Nav'
 
 const Header = () => {
-  const dotsContainer = useRef()
-
   return (
     <header id={HeaderStyles.mainHeader}>
       <div className={HeaderStyles.header_row}>
@@ -32,29 +29,10 @@ const Header = () => {
           <div className={HeaderStyles.banner}>
             <img
               src='/images/iphoneBG1.jpg'
+              // src='/images/BG2.jpg'
               className={HeaderStyles.bannerImg}
-              id={HeaderStyles.bannerImg_1}
               alt='image'
             />
-            <img
-              src='/images/macBG3.jpg'
-              className={HeaderStyles.bannerImg}
-              id={HeaderStyles.bannerImg_2}
-              alt='image'
-            />
-            <img
-              src='/images/rolex1.jpg'
-              className={HeaderStyles.bannerImg}
-              id={HeaderStyles.bannerImg_3}
-              alt='image'
-            />
-          </div>
-
-          <div className={HeaderStyles.dotsContainer} ref={dotsContainer}>
-            <div className={HeaderStyles.dot}></div>
-            <div className={HeaderStyles.dot}></div>
-            <div className={HeaderStyles.dot}></div>
-            <div className={HeaderStyles.dot}></div>
           </div>
         </div>
       </div>

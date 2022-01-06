@@ -6,7 +6,7 @@ const cartState = {
   isLoading: true,
   tax: 5,
   flatRate: 10,
-  shippingCost: 10,
+  shippingCost: 0,
   cart: [],
 }
 
@@ -54,9 +54,28 @@ export const handleCartItemDeletion = (userID, productID) => async dispatch => {
   }
 }
 
-export const proceedToCheckout = () => async dispatch => {}
+export const proceedToCheckout =
+  (cart, { user, shipCost, cartTotal }) =>
+  async dispatch => {
+    try {
+      const res = await axios(
+        printOptions(
+          `PUT`,
+          `/api/user/cart?cart=${JSON.stringify(cart)}&userID=${
+            user._id
+          }&shipCost=${shipCost}&cartTotal=${cartTotal}`
+        )
+      )
 
-const reducer = (state = cartState, { type, payload }) => {
+      const { cart: newCart, payLoad } = res.data
+      dispatch({ type: 'UPDATE_CART', payload: newCart, config: payLoad })
+    } catch (err) {
+      console.log(err)
+      alert(`something went wrong`)
+    }
+  }
+
+const reducer = (state = cartState, { type, payload, config }) => {
   switch (type) {
     case 'OPEN_LOGIN_MODAL':
       return {
@@ -119,6 +138,13 @@ const reducer = (state = cartState, { type, payload }) => {
       return {
         ...state,
         cart: cart_DEC,
+      }
+
+    case 'UPDATE_CART':
+      return {
+        ...state,
+        cart: payload,
+        shippingCost: config.shippingCost,
       }
 
     default:

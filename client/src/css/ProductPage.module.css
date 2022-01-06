@@ -177,9 +177,78 @@ SPINNER
   font-size: 1.8rem;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 780px) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .imgContainer {
+    width: 30rem;
+  }
+
+  .titleContainer h3 {
+    font-size: 1.8rem;
+  }
+
+  .col_2 header p {
+    font-size: 1.8rem;
+  }
+
+  .col_2_desc p {
+    font-size: 1.4rem;
+  }
+
+  .iconContainer {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .iconContainer > svg {
+    font-size: 1.3rem;
+  }
+
+  .col_2_guaranteeBox h4 {
+    font-size: 1.4rem;
+  }
+
+  .col_2_guaranteeBox p {
+    font-size: 1.3rem;
+  }
+
+  /*
+  SPINNER
+  */
+
+  .centerItem,
+  .errorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .centerItem h2 {
+    font-size: 2.25rem;
+  }
+
+  .spinnerContainer {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .errorContainer h2 {
+    font-size: 2.2rem;
+  }
+
+  .errorContainer a {
+    font-size: 1.48rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .row {
     grid-template-columns: 1fr;
+    row-gap: 3rem;
   }
 
   .imgContainer {
@@ -187,37 +256,64 @@ SPINNER
   }
 
   .titleContainer h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   .titleContainer svg {
-    font-size: 1.4rem;
+    font-size: 1.26rem;
   }
 
   .col_2 header p {
-    font-size: 1.78rem;
+    font-size: 1.7rem;
+  }
+
+  .col_2_desc p {
+    font-size: 1.26rem;
+  }
+
+  .iconContainer {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .iconContainer > svg {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
+  }
+
+  .col_2_guaranteeBox h4 {
+    font-size: 1.26rem;
+  }
+
+  .col_2_guaranteeBox p {
+    font-size: 1.2rem;
+  }
+
+  /*
+  SPINNER
+  */
+
+  .centerItem,
+  .errorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .centerItem h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .spinnerContainer {
-    width: 8rem;
-    height: 8rem;
+    width: 10rem;
+    height: 10rem;
   }
 
   .errorContainer h2 {
-    font-size: 2.45rem;
-    margin-bottom: 1.5rem;
+    font-size: 2rem;
   }
 
   .errorContainer a {
-    padding: 0.6rem 1rem;
-    font-size: 1.5rem;
+    font-size: 1.48rem;
   }
 }

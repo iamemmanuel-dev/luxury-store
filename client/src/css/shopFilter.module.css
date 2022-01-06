@@ -105,3 +105,65 @@
   font-size: 1.6rem;
   font-weight: bolder;
 }
+
+@media screen and (max-width: 600px) {
+  .content h2,
+  .categoryContainer h3 {
+    font-size: 1.8rem;
+  }
+
+  .breadCrumb {
+    font-size: 1.36rem;
+  }
+
+  .categoryContainer {
+    margin-top: 2rem;
+  }
+
+  .filterBtnsContainer {
+    margin: 1.5rem 0;
+    max-width: 15rem;
+  }
+
+  .form_group label {
+    font-size: 1.25rem;
+  }
+
+  .DOD {
+    margin-top: 3rem;
+  }
+
+  .DOD_content {
+    margin-top: 3rem;
+  }
+
+  .DOD_imgContainer {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-right: 1.4rem;
+  }
+
+  .DOD_tag {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    width: 2.85rem;
+    height: 2.85rem;
+    font-size: 1rem;
+  }
+
+  .DOD_title {
+    font-size: 1.35rem;
+    font-weight: bold;
+  }
+
+  .DOD_price {
+    font-size: 1.34rem;
+  }
+
+  .DOD_price_now {
+    color: var(--main_color);
+    font-size: 1.36rem;
+    font-weight: bolder;
+  }
+}

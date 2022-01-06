@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import CartNavig from '../components/CartNavig'
 import Footer from '../components/Footer'
@@ -13,7 +13,7 @@ import NewsLetter from '../components/NewsLetter'
 import { formatPrice } from '../components/Helpers/FormatPrice'
 import CartItems from '../components/CartItems'
 
-const Cart = () => {
+const Cart = props => {
   const [error, setError] = useState(false)
   const [couponError, setCouponError] = useState(false)
   const inputRef = useRef(null)
@@ -34,7 +34,8 @@ const Cart = () => {
     0
   )
 
-  const cartTotal = ''
+  const shipCost = Number(shippingCost)
+  const cartTotal = Number(cartSubTotal) + (shipCost ? shipCost : 0) + tax
 
   const handleChange = e => {
     const value = e.target.checked && e.target.value
@@ -42,7 +43,6 @@ const Cart = () => {
   }
 
   const validateProceedToCheckout = e => {
-    // this is where you update the carAmt on the backend
     e.preventDefault()
     if (shippingCost === 'free') {
       const isNotLiable = cart.some(
@@ -51,12 +51,14 @@ const Cart = () => {
       if (isNotLiable) {
         return setError(true)
       }
-
-      alert(`Submitted`)
-      return dispatch(proceedToCheckout())
+      return dispatch(
+        proceedToCheckout(cart, { user, shipCost, cartTotal })
+      ).then(() => props.history.replace(`/checkout`))
     }
-    alert(`Submitted`)
-    dispatch(proceedToCheckout())
+
+    dispatch(proceedToCheckout(cart, { user, shipCost, cartTotal })).then(() =>
+      props.history.replace(`/checkout`)
+    )
   }
 
   const handleCouponVerification = e => {
@@ -143,6 +145,9 @@ const Cart = () => {
                           <button>Apply</button>
                         </div>
                       </form>
+                      <small className={C.verificationStatus}>
+                        Verifying: verified
+                      </small>
                     </div>
                     <div className={C.col_2}>
                       <header>
@@ -200,7 +205,7 @@ const Cart = () => {
 
                           <div className={C.total}>
                             <h4>Total</h4>
-                            <h4>$1589.99</h4>
+                            <h4>{formatPrice(cartTotal)}</h4>
                           </div>
                           <button type='submit' className={C.btn}>
                             proceed to checkout
@@ -221,4 +226,4 @@ const Cart = () => {
   )
 }
 
-export default Cart
+export default withRouter(Cart)

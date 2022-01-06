@@ -63,13 +63,45 @@ MEDIA QUERIES
 ====================
 */
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1030px) {
   #mainHeader {
-    height: 60vh;
+    height: 35vh;
   }
 
   .headerContent {
-    top: 50%;
+    top: 60%;
+  }
+
+  .iconContainer > svg {
+    font-size: 2.5rem;
+  }
+
+  .mainText {
+    font-size: 4rem;
+  }
+
+  .subText {
+    font-size: 1.7rem;
+  }
+
+  .btn {
+    padding: 1.5rem 2rem;
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  #mainHeader {
+    height: 40vh;
+  }
+
+  .headerContent {
+    top: 60%;
+    transform: translateY(-50%);
+  }
+
+  .iconContainer > svg {
+    font-size: 2.5rem;
   }
 
   .mainText {
@@ -77,12 +109,85 @@ MEDIA QUERIES
   }
 
   .subText {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .btn {
-    padding: 1rem 1.6rem;
-    font-size: 1.5rem;
-    background: #000;
+    padding: 1.5rem 1.5rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #mainHeader {
+    height: 45vh;
+  }
+
+  .headerContent {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .iconContainer > svg {
+    font-size: 2rem;
+  }
+
+  .iconContainer > svg:hover {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .iconContainer > svg:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  .headerContent h1 > span {
+    display: block;
+  }
+
+  .mainText {
+    font-size: 1.9rem;
+  }
+
+  .subText {
+    font-size: 1.4rem;
+  }
+
+  .btn {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  #mainHeader {
+    height: 40vh;
+  }
+
+  .headerContent {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .iconContainer > svg {
+    font-size: 1.6rem;
+  }
+
+  .iconContainer > svg:hover {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .mainText {
+    font-size: 1.69rem;
+  }
+
+  .subText {
+    font-size: 1.24rem;
+  }
+
+  .btn {
+    padding: 0.85rem 1rem;
+    font-size: 1.35rem;
   }
 }

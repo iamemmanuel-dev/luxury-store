@@ -1,4 +1,5 @@
 {
   "workbench.preferredHighContrastColorTheme": "Monokai",
-  "workbench.preferredLightColorTheme": "Default Dark+"
+  "workbench.preferredLightColorTheme": "Default Dark+",
+  "editor.fontSize": 17.5
 }

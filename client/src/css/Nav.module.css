@@ -130,19 +130,84 @@
   text-transform: capitalize;
 }
 
-@media screen and (max-width: 720px) {
-  .navbar {
-    padding: 1.7rem 3rem;
+@media screen and (max-width: 1030px) {
+  .navIcon {
+    font-size: 2.3rem;
   }
+
   .navList {
-    font-size: 1.6rem;
+    font-size: 2.5rem;
+  }
+
+  .navCloseBtn {
+    font-size: 5rem;
+  }
+
+  .profileContainer p {
+    font-size: 1.9rem;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .logoContainer {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .navIcon {
+    font-size: 1.9rem;
+  }
+
+  .navList {
+    font-size: 2rem;
+  }
+
+  .navList:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+
+  .navCloseBtn {
+    font-size: 4rem;
+  }
+
+  .profileContainer p {
+    font-size: 1.78rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    padding: 1.5rem 3rem;
+  }
+
+  .logoContainer {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .navIcon {
+    font-size: 1.7rem;
+  }
+
+  .navList {
+    font-size: 1.57rem;
+  }
+
+  .navList:not(:last-child) {
+    margin-bottom: 3.5rem;
   }
 
   .navCloseBtn {
     font-size: 3rem;
   }
 
-  .navList:not(:last-child) {
-    margin-bottom: 4rem;
+  .profileContainer p {
+    font-size: 1.34rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .logoContainer {
+    display: none;
   }
 }

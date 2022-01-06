@@ -45,14 +45,24 @@
   margin-top: 3rem;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 600px) {
   .row {
-    /* grid-template-columns: 1fr 4fr; */
+    display: grid;
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
-  .col_1 {
-    border-right: none;
+  .col_2_mainHeader {
+    padding: 0.46rem 0;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .col_2_mainHeader select {
+    padding: 0.5rem;
+  }
+
+  .col_2_mainHeader h3 {
+    font-size: 1rem;
   }
 }

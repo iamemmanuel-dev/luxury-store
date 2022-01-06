@@ -79,3 +79,39 @@
 .btn:hover {
   background: var(--main_grey);
 }
+
+@media screen and (max-width: 600px) {
+  .productBox {
+    flex-basis: 18rem;
+  }
+
+  .productImgContainer {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .productBoxSeat header {
+    padding: 0.36rem 0;
+  }
+
+  .productBoxSeatContent {
+    padding: 1rem 0;
+  }
+
+  .category {
+    font-size: 1.35rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .price {
+    font-size: 1.6rem;
+    margin: 1rem 0;
+  }
+
+  .btn {
+    padding: 0.46rem 0.8rem;
+  }
+}

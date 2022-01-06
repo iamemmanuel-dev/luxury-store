@@ -66,8 +66,8 @@ const CartItems = ({
 
       <td>
         {discountPrice
-          ? `$${parseInt(discountPrice * amount).toFixed(2)}`
-          : `$${parseInt(price * amount).toFixed(2)}`}
+          ? `${formatPrice(parseInt(discountPrice * amount))}`
+          : `${formatPrice(parseInt(price * amount))}`}
       </td>
     </tr>
   )

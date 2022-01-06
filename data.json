@@ -14,9 +14,8 @@
       "__v": 0,
       "DOD": "No",
       "amount": 1,
-      "discountPrice": "",
-      "productSubtotal": 0,
-      "productTotal": 0
+      "discount": 0,
+      "discountPrice": 0
     },
     {
       "title": "Apple iPhone 11",
@@ -71,9 +70,8 @@
       "__v": 0,
       "DOD": "No",
       "amount": 1,
-      "discountPrice": "",
-      "productSubtotal": 0,
-      "productTotal": 0
+      "discount": 0,
+      "discountPrice": 0
     },
     {
       "title": "Rolex Submariner",
@@ -89,9 +87,8 @@
       "__v": 0,
       "DOD": "No",
       "amount": 1,
-      "discountPrice": "",
-      "productSubtotal": 0,
-      "productTotal": 0
+      "discount": 0,
+      "discountPrice": 0
     },
     {
       "title": "Rolex GMT-Master II",
@@ -107,9 +104,8 @@
       "__v": 0,
       "DOD": "No",
       "amount": 1,
-      "discountPrice": "",
-      "productSubtotal": 0,
-      "productTotal": 0
+      "discount": 0,
+      "discountPrice": 0
     },
     {
       "title": "Apple iPhone 12 Pro Max",
@@ -125,9 +121,8 @@
       "__v": 0,
       "DOD": "No",
       "amount": 1,
-      "discountPrice": "",
-      "productSubtotal": 0,
-      "productTotal": 0
+      "discount": 0,
+      "discountPrice": 0
     },
     {
       "title": "2021 Apple MacBook Pro",
@@ -143,9 +138,8 @@
       "__v": 0,
       "DOD": "No",
       "amount": 1,
-      "discountPrice": "",
-      "productSubtotal": 0,
-      "productTotal": 0
+      "discount": 0,
+      "discountPrice": 0
     },
     {
       "title": "Rolex Cosmograph Daytona",
@@ -161,9 +155,8 @@
       "__v": 0,
       "DOD": "No",
       "amount": 1,
-      "discountPrice": "",
-      "productSubtotal": 0,
-      "productTotal": 0
+      "discount": 0,
+      "discountPrice": 0
     }
   ]
 }

@@ -3,6 +3,7 @@
   max-width: var(--max_width);
   margin: 0 auto;
   padding: 5rem 0 !important;
+  overflow: hidden;
 }
 
 .container {
